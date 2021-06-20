@@ -10,7 +10,7 @@ var cors = require("cors");
 const environment = process.env.ENVIRONMENT;
 var compression = require("compression");
 var helmet = require("helmet");
-
+const googleApiKey = process.env.YOUTUBE_KEY;
 const port = process.env.PORT;
 const ServerUrl =
   environment !== "production"
@@ -52,7 +52,7 @@ db.once("open", function () {
 
 const opts = {
   maxResults: 10,
-  key: "AIzaSyCKHGjDojW9Cyuzzc6IT7FkgCoCghZ2k_E",
+  key: googleApiKey,
 };
 
 /**
