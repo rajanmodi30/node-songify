@@ -7,6 +7,9 @@ const express = require("express");
 const uuidv4 = require("uuid"); // I chose v4 ‒ you can select others
 const app = express();
 var cors = require("cors");
+var compression = require("compression");
+var helmet = require("helmet");
+
 const port = process.env.PORT;
 const ServerUrl = process.env.SERVER_URL + ":" + port;
 const mongoose = require("mongoose");
@@ -15,9 +18,10 @@ mongoose.connect("mongodb://localhost/node-song-app", {
   useUnifiedTopology: true,
 });
 
-console.log("ServerUrl", ServerUrl);
 app.use(cors());
 app.use("/media", express.static("media"));
+app.use(compression());
+app.use(helmet());
 
 const db = mongoose.connection;
 
