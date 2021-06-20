@@ -7,11 +7,15 @@ const express = require("express");
 const uuidv4 = require("uuid"); // I chose v4 ‒ you can select others
 const app = express();
 var cors = require("cors");
+const environment = process.env.ENVIRONMENT;
 var compression = require("compression");
 var helmet = require("helmet");
 
 const port = process.env.PORT;
-const ServerUrl = process.env.SERVER_URL + ":" + port;
+const ServerUrl =
+  environment !== "production"
+    ? process.env.SERVER_URL + ":" + port
+    : process.env.SERVER_URL;
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/node-song-app", {
   useNewUrlParser: true,
