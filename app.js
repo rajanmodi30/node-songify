@@ -74,6 +74,7 @@ app.get("/downloads", (req, res) => {
   let songName = req.query.name;
   let filename = uuidv4.v4();
   let path = "media/" + filename + ".mp3";
+  console.log("url", url);
   let stream = ytdl(url, { filter: "audioonly" }).pipe(
     fs.createWriteStream(path)
   );
@@ -85,7 +86,7 @@ app.get("/downloads", (req, res) => {
       .then(() => {
         res.json({
           status: true,
-          response: `http://192.168.0.102:3000/media/${filename}.mp3`,
+          response: `${ServerUrl}/media/${filename}.mp3`,
         });
       })
       .catch(() => {
