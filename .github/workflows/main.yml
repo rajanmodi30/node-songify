@@ -29,5 +29,5 @@ jobs:
       with:       
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: Songify Node Build Uploaded to the server.Status is ${{ needs.deploy.outputs  }}
+        message: Songify Node Build Uploaded to the server.Status is ${{ needs.deploy.result  }}
 
