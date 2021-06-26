@@ -26,7 +26,8 @@ jobs:
     - uses: actions/checkout@master
     - name: send custom message with args
       uses: appleboy/telegram-action@master
-      with:
+      with:       
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: Songify Node Build Uploaded Successfully to the server.
+        message: Songify Node Build Uploaded to the server. Status is ${{ needs.deploy.result  }}
+
