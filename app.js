@@ -1,4 +1,5 @@
-require("dotenv").config();
+const defaultPath = require("path");
+require("dotenv").config({ path: defaultPath.join(__dirname, ".env") });
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const search = require("youtube-search");
