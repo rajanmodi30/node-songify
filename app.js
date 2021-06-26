@@ -17,7 +17,6 @@ const ServerUrl =
     : process.env.SERVER_URL;
 const mongoose = require("mongoose");
 const ytsr = require("ytsr");
-const dummy = "data";
 
 mongoose.connect("mongodb://localhost/node-song-app", {
   useNewUrlParser: true,
