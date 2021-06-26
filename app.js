@@ -67,6 +67,7 @@ app.get("/search/:searchParams", (req, res) => {
   //   .then((results) => res.json(results))
   //   .catch((err) => console.log(err));
 
+  
   search(searchParams, opts, function (err, results) {
     if (err) return res.json(err);
     res.json(results);
