@@ -80,7 +80,7 @@ app.get("/downloads", (req, res) => {
   let url = req.query.url;
   let songName = req.query.name;
   let filename = uuidv4.v4();
-  let path = "media/" + filename + ".mp3";
+  let path = defaultPath.join(__dirname, "media/") + filename + ".mp3";
   console.log("url", url);
   let stream = ytdl(url, { filter: "audioonly" }).pipe(
     fs.createWriteStream(path)
