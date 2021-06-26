@@ -1,10 +1,20 @@
-name: learn-github-actions
-on: [push]
+name: Deploying To Server
+
+on:
+  push:
+    branches:
+      - master
+
 jobs:
-  check-bats-version:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.AWS_KEY }}
+          script: whoami
