@@ -17,4 +17,6 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
-          script: whoami
+          script: |
+                  whoami
+                  ls -al
