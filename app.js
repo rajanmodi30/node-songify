@@ -25,7 +25,7 @@ mongoose.connect("mongodb://localhost/node-song-app", {
 
 const app = express();
 app.use(cors());
-app.use("/media", express.static("media"));
+app.use("/media", express.static(__dirname + "/media"));
 app.use(compression());
 app.use(helmet());
 
