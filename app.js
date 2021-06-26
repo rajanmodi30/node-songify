@@ -17,7 +17,7 @@ const ServerUrl =
     : process.env.SERVER_URL;
 const mongoose = require("mongoose");
 const ytsr = require("ytsr");
-
+const dummy = "";
 mongoose.connect("mongodb://localhost/node-song-app", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -67,7 +67,6 @@ app.get("/search/:searchParams", (req, res) => {
   //   .then((results) => res.json(results))
   //   .catch((err) => console.log(err));
 
-  
   search(searchParams, opts, function (err, results) {
     if (err) return res.json(err);
     res.json(results);

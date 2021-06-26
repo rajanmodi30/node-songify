@@ -13,4 +13,3 @@ sudo npm install
 
 echo "Run new PM2 action"
 sudo pm2 restart all
-
