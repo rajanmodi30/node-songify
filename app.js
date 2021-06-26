@@ -110,7 +110,7 @@ app.get("/available/songs", (req, res) => {
   Song.find(
     function (err, songs) {
       if (err) return res.json({ status: false, songs: err });
-      return res.json({ status: false, songs: songs });
+      return res.json({ status: true, songs: songs });
     },
     { getters: true }
   );
