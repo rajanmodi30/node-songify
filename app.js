@@ -2,7 +2,6 @@ require("dotenv").config();
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const search = require("youtube-search");
-const { getVideoID } = require("ytdl-core");
 const express = require("express");
 const uuidv4 = require("uuid"); // I chose v4 ‒ you can select others
 var cors = require("cors");
