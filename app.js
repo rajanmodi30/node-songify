@@ -138,5 +138,7 @@ app.get("/delete/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at ${ServerUrl}`);
+  console.log(
+    `Example app listening at ${ServerUrl} env ${environment} serverurl ${port}`
+  );
 });
