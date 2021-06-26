@@ -20,6 +20,7 @@ jobs:
           script: sh deploy.sh
   build:
     name: Build
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
