@@ -72,6 +72,12 @@ app.get("/search/:searchParams", (req, res) => {
   });
 });
 
+app.get("dummy", (re, res) => {
+  res.json({
+    status: true,
+  });
+});
+
 /**
  * downloads from the url provided
  */
